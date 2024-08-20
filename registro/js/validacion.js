@@ -15,6 +15,11 @@ function comparacionContrasena(password1, password2) {
 function verificarContrasena() {
     let password1input = document.getElementById("password1").value;
     let password2input = document.getElementById("password2").value;
+    
+    if(pasword1input.length <6) {
+     alert("La contraseña debe tener al menos 6 caracteres.");
+        return false;
+}
 
     if (comparacionContrasena(password1input, password2input)) {
         alert("Las contraseñas coinciden");
@@ -22,17 +27,14 @@ function verificarContrasena() {
         alert("Las contraseñas no coinciden");
     }
 }
-if(pasword.length <6) {
-    errorMessage.textContent = "La contraseña debe tener al menos 6 caracteres.";
-    return;
-}
+
 function validarCheckBox() {
     let terminos = document.querySelector("#terminos");
     if (terminos.checked) {
-    return true;
+        return true;
     } else {
     return false;
-}
+    }
 }
 
 document.getElementById("regBtn").addEventListener("click", function() {
